@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terstars — Telegram Stars</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <canvas id="stars-bg"></canvas>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-star"></i>
+                    <span>Terstars</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Главная</a></li>
+                    <li><a href="#order" class="nav-link">Купить звёзды</a></li>
+                    <li><a href="#how-it-works" class="nav-link">Инструкция</a></li>
+                    <li><a href="#stats" class="nav-link">Статистика</a></li>
+                    <li><a href="#reviews" class="nav-link">Отзывы</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#contact" class="nav-link">Контакты</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-center">
+                <h1 class="hero-title">
+                    Terstars<br>
+                    <span class="gradient-text">Telegram Stars</span>
+                </h1>
+                <p class="hero-description">
+                    Покупай звёзды для Telegram быстро, удобно и безопасно.<br>Только звёзды — ничего лишнего.
+                </p>
+                <button class="cta-button" onclick="scrollToSection('order')">
+                    <i class="fas fa-star"></i>
+                    Купить звёзды
+                </button>
+            </div>
+        </section>
+        <!-- Форма заказа (обновлённая) -->
+        <section id="order" class="order-form">
+            <div class="container">
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2>Купить Telegram Stars</h2>
+                        <p>Введи свой Telegram ID и количество звёзд для покупки</p>
+                    </div>
+                    <form id="orderForm" class="order-form-content">
+                        <div class="form-group">
+                            <label for="telegramId">Telegram ID или @username</label>
+                            <input type="text" id="telegramId" name="telegramId" placeholder="@username или ID" required>
+                            <div class="input-icon">
+                                <i class="fab fa-telegram"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="starsCount">Количество звёзд</label>
+                            <input type="number" id="starsCount" name="starsCount" min="1" max="10000" placeholder="Например, 100" required>
+                            <div class="input-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email (для уведомлений)</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            <div class="input-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </div>
+                        <button type="submit" class="pay-button">
+                            <i class="fas fa-credit-card"></i>
+                            Оплатить заказ
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Инструкция по покупке -->
+        <section id="how-it-works" class="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Инструкция по покупке</h2>
+                    <p class="section-description">Простой процесс покупки звезд в 4 шага</p>
+                </div>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <i class="fas fa-mouse-pointer"></i>
+                        </div>
+                        <h3>Выбери пакет</h3>
+                        <p>Выбери количество звезд, которое подходит твоему каналу</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <i class="fas fa-user-edit"></i>
+                        </div>
+                        <h3>Укажи данные</h3>
+                        <p>Введи свой Telegram ID или @username и email</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3>Оплати заказ</h3>
+                        <p>Безопасная оплата через защищенную платежную систему</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Получи звезды</h3>
+                        <p>Звезды будут отправлены на твой канал в течение 5 минут</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="stats" class="stats-section">
+            <div class="stats-bg"></div>
+            <div class="stats-container">
+                <div class="stat-block">
+                    <div class="stat-value"><span class="stat-icon"><i class="fas fa-star"></i></span><span id="stat-total">0</span></div>
+                    <div class="stat-label">Отправлено звёзд всего</div>
+                </div>
+                <div class="stat-block">
+                    <div class="stat-value"><span class="stat-icon"><i class="fas fa-bolt"></i></span><span id="stat-today">0</span></div>
+                    <div class="stat-label">Отправлено звёзд сегодня</div>
+                </div>
+                <div class="stat-block">
+                    <div class="stat-value"><span class="stat-icon"><i class="fas fa-calendar-day"></i></span><span id="stat-yesterday">0</span></div>
+                    <div class="stat-label">Отправлено звёзд вчера</div>
+                </div>
+                <div class="stat-block">
+                    <div class="stat-value"><span class="stat-icon"><i class="fas fa-clock"></i></span><span id="stat-avgtime">—</span></div>
+                    <div class="stat-label">Среднее время выполнения заказа</div>
+                </div>
+            </div>
+        </section>
+        <section id="reviews" class="reviews-section">
+            <div class="container">
+                <h2 class="section-title">Отзывы</h2>
+                <div class="reviews-list" id="reviews-list">
+                    <!-- Здесь будут отзывы -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Часто задаваемые вопросы</h2>
+                <p class="section-description">Ответы на популярные вопросы</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Что такое Telegram Stars?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Telegram Stars - это виртуальная валюта, которую можно дарить авторам каналов. Звезды помогают поддерживать создателей контента и показывают популярность канала.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Как быстро я получу звезды?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Звезды доставляются мгновенно после подтверждения оплаты. Обычно это занимает не более 5 минут.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Безопасна ли оплата?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, все платежи обрабатываются через защищенные платежные системы. Мы не храним данные ваших карт.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Могу ли я вернуть деньги?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Возврат возможен в течение 24 часов после покупки, если звезды не были доставлены по техническим причинам.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Как найти свой Telegram ID?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Напиши @userinfobot в Telegram, и он покажет твой ID. Или можешь просто указать свой @username.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Подвал -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-star"></i>
+                        <span>Terstars</span>
+                    </div>
+                    <p>Быстрая и безопасная покупка Telegram Stars для твоего канала</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Реквизиты</h3>
+                    <div class="contact-item">
+                        <span>ИП Иванов Иван Иванович</span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Документы</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Связаться с нами</a></li>
+                        <li><a href="#">Публичная оферта</a></li>
+                        <li><a href="#">Политика защиты и обработки персональных данных</a></li>
+                        <li><a href="#">Согласие на обработку персональных данных</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Terstars. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html> 

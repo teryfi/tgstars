@@ -1,0 +1,12 @@
+{
+  "name": "stars-backend",
+  "version": "1.0.0",
+  "description": "Автоматизация отправки Telegram Stars через fragment-api.com",
+  "main": "sendStars.js",
+  "scripts": {
+    "send": "node sendStars.js"
+  },
+  "dependencies": {
+    "axios": "^1.10.0"
+  }
+}
